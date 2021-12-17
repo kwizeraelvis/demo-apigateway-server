@@ -1,0 +1,13 @@
+package aos.rw.demoapigatewayservice;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class DemoApigatewayServiceApplicationTests {
+
+    @Test
+    void contextLoads() {
+    }
+
+}

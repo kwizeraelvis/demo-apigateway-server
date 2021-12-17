@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: api-gateway
+  config:
+    import: optional:configserver:${CONFIG_SERVER_URL}
+  cloud:
+    gateway:
+      routes:
+        - id: task-service
+          uri: lb://task-service
+          predicates:
+            - Path=/api/task/**
+          filters:
+            - StripPrefix=2
+---
+spring:
+  config:
+    activate:
+      on-profile: docker
+    import: configserver:${DOCKER_CONFIG_SERVER_URL}
